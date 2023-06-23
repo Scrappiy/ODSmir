@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработка входного сигнала</title>
+    <link rel="shortcut icon" href="img/lg11.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bigA">
+            <img class="ing" src="img/nchf.png" width="250px">
+            <input id="max1" type="number" class="num num1" value="2">
+            <input id="min1" type="number" class="num num2" value="-2">
+            <input id="C1" type="number" class="num num3" value="0.2">
+            <span class="num num4">X = <input id="X1" type="search" placeholder="входной сигнал" value="0 0 0 0 0 101010"></span>
+            <div class="num num5" onclick="obr1()">Обработать</div>
+            <div class="num num6" id="vvd1"></div>
+            <span class="num num7">повторяющаяся часть: <input id="ost1" type="text" value="10"></span>
+    </div>
+<div class="bigA">
+    <div>y(k) = b0 x(k) – a1 y(k-1)  Обратите внимание на знак перед а1!</div>
+    <div> Количество выходных отсчётов:= +<input id="ots" type="number" value="5"></div>
+    <div >b0:= <input id="b01" type="number" value="0.5"></div>
+    <div >a1:= <input id="a01" type="number" value="1.1"></div>
+    <div >Y0:= <input id="Y1" type="number" value="0"></div>
+    <div >Xk:= <input id="X2" type="search" placeholder="входной сигнал" value="0 100 0 0"></div>
+    <div >повторяющаяся часть: <input id="ost2" type="text" value="0"></div>
+    <div class="num8" onclick="obr2()">Обработать</div>
+    <div class="num num6" id="vvd2"></div>
+</div>
+<div class="bigA">
+    <div>yk = (xk+x(k-1))/2 + y(k-1)  Обратите внимание на знак перед y(k-1)!</div>
+    <div >Y0:= <input id="Y2" type="number" value="0"></div>
+    <div >X0:= <input id="X4" type="number" value="0"></div>
+    <div >Xk:= <input id="X3" type="search" placeholder="входной сигнал" value="0 0 2 2 4 0 0 0 4 4 4 0 0 0 5 0"></div>
+    <div >Коэффициент перед y(k-1)<input id="Y3" type="number" value="-1"></div>
+    <div >повторяющаяся часть: <input id="ost3" type="text" value="0"></div>
+    <div class="num8" onclick="obr3()">Обработать</div>
+    <div class="num num6" id="vvd3"></div>
+</div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
