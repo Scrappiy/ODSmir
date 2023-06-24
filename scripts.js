@@ -133,11 +133,55 @@ function obr3() {
         res2 = "";
 
         for (let index = 1; index < (d.length / 2) + 3; index++) {
-            Px = (Xmas[index]+Xmas[index-1])/2+ parseInt(c)*Ymas[index-1];
+            Px = (Xmas[index] + Xmas[index - 1]) / 2 + parseInt(c) * Ymas[index - 1];
             Ymas[index] = Px;
             res1 = res1 + `y(` + (index) + `)=` + Px + `<br>`;
         }
 
         document.getElementById("vvd3").innerHTML = res1;
+    }
+}
+
+function obr4() {
+    let a = "", b = "", res1 = "", res2 = "", Rx = 0, Px = 0, Tx = 0, Ty = 0;
+    a = document.getElementById("Y4").value;
+    b = document.getElementById("X5").value;
+    if ((a == "") || (b == "")) {
+        alert(`ERROR!`);
+    } else {
+        let Xmas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let Ymas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+        if ((a.length % 2) == 1) { a = a + " "; }
+
+        for (let index = 0; index < (a.length / 2); index++) {
+            res1 = a[2 * index] + a[2 * index + 1];
+            Ymas[index] = parseInt(res1);
+        }
+        res1 = "";
+        for (let index = 0; index < (a.length / 2); index++) {
+            res1 = b[2 * index] + b[2 * index + 1];
+            Xmas[index] = parseInt(res1);
+        }
+        res1 = "";
+
+        for (let index = 0; index < (a.length / 2); index++) {
+            Rx = Rx + Xmas[index];
+            Px = Px + Ymas[index];
+        }
+        Rx = Rx / (a.length / 2);
+        Px = Px / (a.length / 2);
+res2="Xср :"+ Rx + ",  Yср :" + Px;
+
+        for (let index = 0; index < (a.length / 2); index++) {
+            Tx = Tx + (Xmas[index] - Rx) * (Ymas[index] - Px);
+            Ty = Ty + (Xmas[index] - Rx) * (Xmas[index] - Rx);
+        }
+
+        res2=res2 + `<br> ` + "Сумма отклонений по X: " + Tx + `<br>` +"Cумма отклонений по Y: " + Ty;
+
+res1= Tx/Ty;
+res1 = res2 +`<br>`+ "Коэффициент линейной регрессии :" + res1;
+document.getElementById("vvd4").innerHTML =res1;
     }
 }
