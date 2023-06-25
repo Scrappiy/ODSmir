@@ -12,6 +12,7 @@
 <body>
     <div class="au">Програмки для решения задач МиСЦОС</div>
     <div class="au">Legendary author: ZOA	&#128736;</div>
+    <div class="au">Числа вписываются по два символа!!! Например 1 как 1 пробел или пробел 1, 10 как 10</div>
     <div class="bigA">
             <img class="ing" src="img/nchf.png" width="250px">
             <input id="max1" type="number" class="num num1" value="2">
@@ -32,6 +33,18 @@
     <div >повторяющаяся часть: <input id="ost2" type="text" value="0"></div>
     <div class="num8" onclick="obr2()">Обработать</div>
     <div class="num num6" id="vvd2"></div>
+</div>
+<div class="au"> y(k) = Сумма(b0 x(k-n)) + a1 y(k-1)</div>
+<div class="bigA">
+    <img class="ing" src="img/nchf.png" width="250px">
+    <input id="max2" type="number" class="num num1" value="1">
+    <input id="min2" type="number" class="num num2" value="-1">
+    <input id="C2" type="number" class="num num3" value="0.6">
+    <input id="C3" type="number" class="num num9" value="0.4">
+    <span class="num num4">X = <input id="X7" type="search" placeholder="входной сигнал" value="0 0 1 1 0"></span>
+    <div class="num num5" onclick="obr6()">Обработать</div>
+    <div class="num num6" id="vvd6"></div>
+    <span class="num num7">повторяющаяся часть: <input id="ost3" type="text" value="0"></span>
 </div>
 <div class="bigA">
     <div>yk = (xk+x(k-1))/2 + y(k-1)  Обратите внимание на знак перед y(k-1)!</div>
@@ -57,6 +70,14 @@
     <div >X0:= <input id="X6" type="search" value="1 2 3 4 5 6 7 8 9 101112"></div>
     <div class="num8" onclick="obr5()">Обработать</div>
     <div class="num num6" id="vvd5"></div>
+</div>
+<div class="au">Числа вписываются по три символа !!! 1 как 1 пробел пробел или пробел 1 пробел или пробел пробел 1, 10 как 10 пробел или пробел 10, 100 как 100, 1.5 как 1.5</div>
+<div class="bigA">
+    <div> Пример : коэффициент ранговой корреляции (без поправок, нет одинаковых чисел) </div>
+    <div >Y:= <input id="Y7" type="search" value="1  2  1.53  2.5"></div>
+    <div >X:= <input id="X8" type="search" value="2  4  3  5  2.5"></div>
+    <div class="num8" onclick="obr7()">Обработать</div>
+    <div class="num num6" id="vvd7"></div>
 </div>
     <script src="scripts.js"></script>
 </body>
