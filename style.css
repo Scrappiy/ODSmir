@@ -10,6 +10,7 @@ background-size: cover; */
 }
 
 .au{
+    padding: 0 20px;
     color: rgb(0, 255, 242);
 }
 
@@ -56,6 +57,13 @@ background-size: cover; */
 .num4{
     top: 24%;
     left: 75%;
+}
+
+.kr{
+    color: red;
+    font-size: large;
+    border: dotted;
+    margin: 10px 0;
 }
 
 .num5{
