@@ -2,15 +2,19 @@ body{
    margin: 0;
    padding: 0;
    background-color: black;
+   font-family: monospace;
    /* background: url(img/backk.png) fixed;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover; */
 }
 
+.au{
+    color: rgb(0, 255, 242);
+}
+
 .bigA{
     font-size: larger;
-    font-family: monospace;
     position: relative;
     padding-left: 1%;
     margin-bottom: 1%;

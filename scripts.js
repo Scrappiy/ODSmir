@@ -182,6 +182,78 @@ res2="Xср :"+ Rx + ",  Yср :" + Px;
 
 res1= Tx/Ty;
 res1 = res2 +`<br>`+ "Коэффициент линейной регрессии :" + res1;
+
+Rx = 0; 
+Px = 0;
+Tx = 0;
+Ty = 0;
+
+
+for (let index = 0; index < (a.length / 2); index++) {
+    Rx = Rx + Xmas[index];
+    Px = Px + Ymas[index];
+    Tx=Tx+Xmas[index]*Xmas[index];
+    Ty=Ty+Ymas[index]*Xmas[index];
+}
+
+b=((Px*Tx-Rx*Ty)/((a.length / 2)*Tx-Rx*Rx));
+a=(((a.length / 2)*Ty-Px*Rx)/((a.length / 2)*Tx-Rx*Rx));
+
+res1=res1 +`<br>`+ " a : " + a + ", b : " + b;
+
 document.getElementById("vvd4").innerHTML =res1;
+    }
+}
+
+function obr5(){
+    let a = "", b = "", res1 = "", Rx = 0, Px = 0, Tx = 0, Ty = 0;
+    let x1= 0,x2= 0,x3= 0,x4= 0,x5= 0, x6= 0;
+    a = document.getElementById("Y5").value;
+    b = document.getElementById("X6").value;
+    if ((a == "") || (b == "")) {
+        alert(`ERROR!`);
+    } else {
+        let Xmas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let Ymas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+        if ((a.length % 2) == 1) { a = a + " "; }
+
+        for (let index = 0; index < (a.length / 2); index++) {
+            res1 = a[2 * index] + a[2 * index + 1];
+            Ymas[index] = parseInt(res1);
+        }
+        res1 = "";
+        for (let index = 0; index < (a.length / 2); index++) {
+            res1 = b[2 * index] + b[2 * index + 1];
+            Xmas[index] = parseInt(res1);
+        }
+        res1 = "";
+
+        for (let index = 0; index < (a.length / 2); index++) {
+            Rx = Rx + Xmas[index];
+            Px = Px + Xmas[index]*Xmas[index];
+            Tx=Tx+Math.log(Ymas[index]);
+            Ty=Ty+Xmas[index]*Math.log(Ymas[index]);
+        }
+
+        res1 = "Сумма X = " + Rx +`<br>`+ "Сумма X^2 = "+ Px +`<br>`+ "Сумма ln(y) = " +Tx+`<br>`+ "Сумма xln(y) = " + Ty;
+
+// Px + Rx = Ty
+// Rx + n = Tx
+
+x1=(Px*(a.length / 2)-Rx*Rx);
+
+x2=(Ty*(a.length / 2)-Rx*Tx);
+
+x3= (Px*Tx-Rx*Ty);
+
+x4=x2/x1;
+x5=x3/x1;
+x6=Math.exp(x5);
+
+
+res1=res1 +`<br>`+ "Определитель = " + x1 +`<br>`+ " a : " + x4 +`<br>`+ "exp(A) : " + x5 +`<br>`+" A = " + x6;
+
+document.getElementById("vvd5").innerHTML =res1;
     }
 }
